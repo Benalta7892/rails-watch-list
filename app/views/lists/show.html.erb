@@ -1,0 +1,9 @@
+<%= render "navbar" %>
+
+<h1>Details of <%= @list.name %> list</h1>
+
+
+
+<%= link_to "New signet", new_list_bookmark_path(@list) %>
+<%= link_to " Delete", list_path(@list), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "ms-3 text-danger" %>
+<%= link_to "Back to lists", lists_path %>
