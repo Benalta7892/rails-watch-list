@@ -1,12 +1,11 @@
 class ListsController < ApplicationController
-
+  before_action :set_list, only: %i[show destroy]
   def index
     @lists = List.all
   end
 
   def show
-    @list = List.find(params[:id])
-    @signet = Bookmark.all(list_id)
+    @movie = @list.movies
   end
 
   def new
@@ -24,14 +23,17 @@ class ListsController < ApplicationController
   end
 
   def destroy
-    @list = List.find(params[:id])
     @list.destroy
     redirect_to lists_path, notice: 'List was successfully destroyed.', status: :see_other
   end
 
   private
 
+  def set_list
+    @list = List.find(params[:id])
+  end
+
   def list_params
-    params.require(:list).permit(:name)
+    params.require(:list).permit(:name, :picture)
   end
 end

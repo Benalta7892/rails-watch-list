@@ -1,9 +1,51 @@
 <%= render "navbar" %>
 
-<h1>Details of <%= @list.name %> list</h1>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://source.unsplash.com/random/?cinema);">
+  <div class="container text-center">
+    <h1><%= @list.name %> movies</h1>
+    <p class="movie-count"><%= @list.movies.count %> movies</p>
+  </div>
+</div>
+
+<div class="container">
 
 
+  <div class="d-flex justify-content-end pt-4 pb-4">
+    <%= link_to "add a movie", new_list_bookmark_path(@list), class: "btn btn-flat-green padding-right: 0;" %>
+  </div>
 
-<%= link_to "New signet", new_list_bookmark_path(@list) %>
-<%= link_to " Delete", list_path(@list), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "ms-3 text-danger" %>
-<%= link_to "Back to lists", lists_path %>
+  <div class="cards">
+    <% @list.bookmarks.each do |bookmark| %>
+      <div class="card">
+        <%= image_tag bookmark.movie.poster_url, alt: "Movie poster", class: "card-img-top" %>
+        <div class="card-body">
+
+          <div class="card-title">
+            <h2><%= link_to bookmark.movie.title, movie_path(bookmark.movie) %></h2>
+            <i class="fa-solid fa-circle"></i>
+            <%= bookmark.movie.rating %>
+            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+          </div>
+
+          <p class="overview"><%= bookmark.movie.overview %></p>
+
+          <div class="card-bottom">
+            <p style="font-weight: bold;"><i class="fa-solid fa-quote-left" style="color: #000000;"></i> <%= bookmark.comment %> by Ben</p>
+            <div class="delete-icon">
+              <%= link_to '<i class="fa-solid fa-trash-can" style="color: #ea1a1a; font-size: 24px;"></i>'.html_safe,
+              bookmark_path(bookmark),
+              data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="option-list">
+    <%= link_to "Delete list", list_path(@list), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-flat" %>
+    <%= link_to "Back to lists", lists_path, class: "btn btn-flat" %>
+  </div>
+
+</div>

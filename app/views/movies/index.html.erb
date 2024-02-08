@@ -1,0 +1,9 @@
+<%= render "navbar" %>
+
+<h1>Movies list</h1>
+
+<div class="cards">
+  <% @movies.each do |movie| %>
+    <%= link_to movie.title, movie_path(movie)  %>
+  <% end %>
+</div>

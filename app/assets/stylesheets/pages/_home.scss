@@ -1,1 +1,23 @@
 // Specific CSS for your home-page
+body {
+  background-color: #21252A;
+}
+
+.container {
+  margin-bottom: 20px;
+  color: white;
+}
+
+.btn-flat-green {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #25DE88;
+  transition: background 0.3s ease;
+  text-decoration: none;
+}
+
+.btn-flat-green:hover {
+  background: #178351;
+  color: white;
+}
