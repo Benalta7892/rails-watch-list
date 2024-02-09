@@ -17,9 +17,9 @@
   </div>
 
 
-  <div class="cards">
+  <div class="cards-category">
     <% @lists.each do |list| %>
-      <%= link_to list_path(list), class: "card-category", style: "background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/random/?#{list.name})" do %>
+      <%= link_to list_path(list), class: "card-category", style: "background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(#{list.image})" do %>
         <%= list.name %>
       <% end %>
     <% end %>

@@ -1,14 +1,15 @@
 .cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 16px;
+  display: flex;
+  justify-content: start;
+  row-gap: 8px;
+  column-gap: 8px;
+  flex-wrap: wrap;
 
 
   .card {
-    width: 500px;
-    height: 350px;
-    padding: 4px;
-
+    width: 400px;
+    max-height: 450px;
+    position: relative;
     p {
       font-size: 14px;
     }
@@ -19,6 +20,12 @@
   height: 50%;
   object-fit: cover;
   object-position: top;
+}
+
+.cards-category {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 8px;
 }
 
 .card-category {
@@ -68,18 +75,26 @@
     }
   }
 
+.card-body {
+position: relative;
+padding: 0;
 
 
-.card-bottom {
-  display: flex;
-  justify-content: space-between;
-  align-items: end;
+  .card-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 4px;
 
-  .delete-icon {
-    margin-top: -10px;
-    }
+    .delete-icon {
+      margin-top: -10px;
+      }
+  }
+
 }
-
 .option-list {
 
   margin-top: 18px;

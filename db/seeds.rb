@@ -25,7 +25,7 @@ puts "Finished!"
 puts "------------------------------------------"
 
 puts "Creating Lists..."
-List.create(name: "Comedy")
-List.create(name: "Fantastic")
-List.create(name: "Horror")
+List.create(name: "Comedy", image: "https://source.unsplash.com/random/?Comedy")
+List.create(name: "Fantastic", image: "https://source.unsplash.com/random/?Fantastic")
+List.create(name: "Horror", image: "https://source.unsplash.com/random/?Horror")
 puts "Finished!"
