@@ -20,11 +20,26 @@
 
   <div class="cards-category">
     <% @lists.each do |list| %>
+    <% if list.photo.present? %>
+      <%= link_to list_path(list), class: "card-category", style: "background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('http://res.cloudinary.com/djgk65kdl/image/upload/c_fill,h_600,w_1200/v1/development/#{list.photo.key}')" do %>
+        <%= list.name %>
+        <% end %>
+    <% else %>
       <%= link_to list_path(list), class: "card-category", style: "background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(#{list.image})" do %>
         <%= list.name %>
+      <% end %>
       <% end %>
     <% end %>
   </div>
 
 
 </div>
+
+
+
+<%# Test cloudinary %>
+<%# <%= cl_image_tag "hvgqhl4jdkhdv32xvowl", alt: "San Francisco", width: 400, %>
+  <%# height: 300, crop: :fill %>
+
+<%# <%= cl_image_tag "g1kkb9mzzkk8hltlhamj", alt: "San Francisco", width: 150, %>
+  <%# height: 150, crop: :thumb, gravity: :face %>
