@@ -22,7 +22,7 @@
     <% @lists.each do |list| %>
     <% if list.photo.present? %>
       <div class="card-category" style="background-image: url('<%= cl_image_path list.photo.key %>')">
-        <%= link_to list_path(list), class: "card-category" do %>
+        <%= link_to list_path(list), class: "card-category-cloud" do %>
           <%= list.name %>
         <% end %>
       </div>
