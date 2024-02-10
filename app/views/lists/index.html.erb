@@ -21,7 +21,7 @@
   <div class="cards-category">
     <% @lists.each do |list| %>
     <% if list.photo.present? %>
-      <%= link_to list_path(list), class: "card-category", style: "background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('http://res.cloudinary.com/djgk65kdl/image/upload/c_fill,h_600,w_1200/v1/development/#{list.photo.key}')" do %>
+      <%= link_to list_path(list), class: "card-category", style: "background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://res.cloudinary.com/djgk65kdl/image/upload/c_fill,h_600,w_1200/v1/development/#{list.photo.key}')" do %>
         <%= list.name %>
         <% end %>
     <% else %>
