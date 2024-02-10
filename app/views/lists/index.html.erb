@@ -5,6 +5,7 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://source.unsplash.com/random/?cinema);">
   <div class="container text-center">
     <h1>Movie lists</h1>
+    <p class="count"><%= @lists.count %> lists</p>
   </div>
 </div>
 
@@ -12,7 +13,7 @@
 <div class="container">
 
   <div class="d-flex justify-content-between pt-4 pb-4">
-    <h2>My Listsssddddsss <%= ENV["MA_VARIABLE"] %></h2>
+    <h2>My Lists</h2>
     <%= link_to "Create a movie list", new_list_path, class: "btn btn-flat-green" %>
   </div>
 
