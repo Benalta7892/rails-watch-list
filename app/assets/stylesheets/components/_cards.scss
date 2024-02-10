@@ -10,9 +10,15 @@
     width: 400px;
     max-height: 450px;
     position: relative;
-    box-shadow: 0 0 15px rgba(0,0,0,0.8);
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 22px 70px 4px;
+    padding: 8px;
+    border-radius: 4px;
+    background-color: #fff2f2;
     p {
       font-size: 14px;
+    }
+    &:hover {
+      box-shadow: 0 0 18px rgba(179,11,11,0.4);
     }
   }
 }
